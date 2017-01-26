@@ -29,7 +29,7 @@ func parseArgs() webfsConfig {
 
 func main() {
 	config := parseArgs()
-	log.Printf("Starting listing of %s on %s...\n", config.dir, config.net)
+	log.Printf("Starting listing of %s on %s with $tcp connection...\n", config.dir, config.laddr, config.net)
 	l, err := net.Listen(config.net, config.laddr)
 	if err != nil {
 		log.Fatal(err)
